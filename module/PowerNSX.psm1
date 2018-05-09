@@ -494,7 +494,7 @@ function ParseCentralCliResponse {
     #Defined this as variable as the swtich statement does not let me concat strings, which makes for a verrrrry long line...
     $RegexDFWRule = "^(?<Internal>#\sinternal\s#\s)?(?<RuleSetMember>rule\s)?(?<RuleId>\d+)\sat\s(?<Position>\d+)\s(?<Direction>in|out|inout)\s" +
             "(?<Type>protocol|ethertype)\s(?<Service>.*?)\sfrom\s(?<Source>.*?)\sto\s(?<Destination>.*?)(?:\sport\s(?<Port>.*))?\s" +
-            "(?<Action>accept|reject|drop)(?:\swith\s(?<Log>log))?(?:\stag\s(?<Tag>'.*'))?;"
+            "(?<Action>accept|reject|drop)(?:\swith\s(?<Log>log))?(?:\stag\s(?<Tag>'.*'))?(\sas\s\w*)?;"
 
     foreach ( $line in ($response -split '[\r\n]')) {
 
